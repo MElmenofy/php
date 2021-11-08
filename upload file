@@ -1,0 +1,21 @@
+
+<form method="POST" enctype="multipart/form-data" >
+<input type="file" name="file" required/>
+<button type="submit" name="upload">ارسال ملف</button>
+</form>
+
+<?php
+if(isset($_POST['upload'])){
+    echo $_FILES['file']['name'] . "<br>";
+    echo $_FILES['file']['type'] . "<br>";
+    echo $_FILES['file']['tmp_name'] . "<br>";
+    $name = $_FILES['file']['name'];
+    $tmp = $_FILES['file']['tmp_name'];
+    if(!file_exists("files/".$_FILES['file']['name'])){
+        move_uploaded_file($tmp, "files/". $name);
+    }else{
+        echo "exist";
+    }
+    
+}
+?>
