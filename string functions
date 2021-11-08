@@ -30,4 +30,19 @@ echo strrev($text);
 // implode()      يقوم بتحويل بيانات من نوع ارراي إلى بيانات من نوع النصي
 // strcmp(string1,string2)                                لمقارنة بين 2 نصوص   
 // -------------------------------Coder Shiyar--------------------------------
+
+$text = "Coder - Shiyar - PHP - YouTube";
+
+$array = explode(" ",$text);
+
+$arrayToText =implode(["PHP","JS","HTML"]) ;
+
+// foreach($array  as $item){
+// echo "<p>$item</p>";
+// }
+
+
+$text_md5 = md5("test");
+$text_sha1 = sha1("Coder Shiyar");
+ echo $text_md5;
 ?>
