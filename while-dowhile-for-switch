@@ -1,0 +1,69 @@
+ 
+<?php
+-----------------------------------------------------------------------------
+while
+------------------------------------------------------------------------------
+
+$counter = 1;
+while ($counter < 10){
+  echo 'abc ';
+  $counter++;
+}
+ 
+-----------------------------------------------------------------------------
+do while
+------------------------------------------------------------------------------
+
+$counter = 1;
+do{
+  echo 'xyz ';
+  $counter++;
+} while ($counter < 10) ;
+ 
+echo "</p>\n";
+-----------------------------------------------------------------------------
+for
+------------------------------------------------------------------------------
+for ($x=1; $x<10; $x++){
+  echo "$x ";
+}
+//The space inside the "" is necessary to separate the numbers.  
+
+//Generate ordered list.  
+echo "\n<ol>";
+for ($x='A'; $x<'G'; $x++){
+  echo "<li>Item $x</li>\n";
+  }
+echo "\n</ol>";
+//Note that letters may be used in the for loop in place of numbers.
+ 
+ -----------------------------------------------------------------------------
+switch
+------------------------------------------------------------------------------
+ $day = "5";
+
+switch ($day) {
+    case "1":
+        echo "It is Monday!";
+        break;
+    case "2":
+        echo "It is today!";
+        break;
+    case "3":
+        echo "It is Wednesday!";
+        break;
+	case "4":
+        echo "It is Thursday!";
+        break;
+    case "5":
+        echo "It is Friday!";
+        break;
+    case "6":
+        echo "It is Saturday!";
+        break;
+	case "7":
+        echo "It is Sunday!";
+        break;
+    default:
+        echo "Invalid number!";
+?>
