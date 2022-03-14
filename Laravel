@@ -8,3 +8,14 @@ if ($request->hasFile('item_image')) {
         }
         $item->image=json_encode($files);
 // /uploade multi file
+
+// delete multi file
+$images = explode(",",  $item->image);
+                    foreach($images as $image){
+                    $image_path = public_path().'/images/'.$image;
+                    if(File::exists($image_path)) {
+//                            File::delete($image_path);
+                     unlink("uploads/restorants/" . $image_path);
+                        }   
+                    }
+// /delete multi file
