@@ -1,0 +1,10 @@
+// uploade multi file
+if ($request->hasFile('item_image')) {
+            foreach ($request->file('item_image') as $file){
+                $name = time().rand(1,1000).'.'.$file->extension();
+                $file->move(public_path($this->imagePath),$name);
+                $files[] = $name;
+            }
+        }
+        $item->image=json_encode($files);
+// /uploade multi file
