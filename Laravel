@@ -19,3 +19,13 @@ $images = explode(",",  $item->image);
                         }   
                     }
 // /delete multi file
+
+
+// delete row with image
+$photos = RestaurantBanner::findOrFail($id);
+        $image_path = public_path().'/uploads/restaurants-banners/'.$photos->filename;
+        if(File::exists($image_path)) {
+            unlink( $image_path);
+        }
+        $photos->delete();
+// /delete row with image
