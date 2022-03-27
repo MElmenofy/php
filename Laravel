@@ -29,3 +29,13 @@ $photos = RestaurantBanner::findOrFail($id);
         }
         $photos->delete();
 // /delete row with image
+
+// return multi id
+$ss = DB::table('order_has_status')->where('status_id', '=',7)->get();
+            $json = $ss;
+            $json_toArray = json_decode($json,true);
+            $array_ids = array_column($json_toArray, 'id');
+            return $array_ids;
+            
+            $result = \App\Order::whereIn('id', $array_ids)->get();
+// /return multi id
