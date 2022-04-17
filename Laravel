@@ -1,12 +1,28 @@
-// uploade multi file
-if ($request->hasFile('item_image')) {
-            foreach ($request->file('item_image') as $file){
-                $name = time().rand(1,1000).'.'.$file->extension();
-                $file->move(public_path($this->imagePath),$name);
-                $files[] = $name;
+// upload file
+     $imageName = time().'.'.$request->image->extension();
+     $product->image = $imageName;
+     $request->image->move(public_path('/uploads/products/'), $imageName);
+// upload file
+// delete single file
+     $image_path = public_path("uploads/products/$product->image");  // Value is not URL but directory file path
+     if(File::exists($image_path)) {
+         File::delete($image_path);
             }
+// delete single image
+-------------------------------------------------------
+
+
+// uploade multi file
+$data = [];
+    if ($request->hasFile('image')) {
+    $images = $request->file('image');
+       foreach ($images as $image) {
+             $name=time() . rand(1,1000) .'.'. $image->extension();
+              $image->move(public_path().'/uploads/products/', $name);
+              $data[] = $name;
+           }
+           $product->image=json_encode($data);
         }
-        $item->image=json_encode($files);
 // /uploade multi file
 
 // delete multi file
@@ -19,7 +35,7 @@ $images = explode(",",  $item->image);
                         }   
                     }
 // /delete multi file
-
+-------------------------------------------------------
 
 // delete row with image
 $photos = RestaurantBanner::findOrFail($id);
