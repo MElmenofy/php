@@ -9,6 +9,11 @@
          File::delete($image_path);
             }
 // delete single image
+
+{{--                            <?php $imgs = json_decode($product->image)  ?>--}}
+{{--                            @foreach($imgs as $img)--}}
+{{--                            <img width="20%" src="{{ asset('uploads/products/').'/'.$img }}">--}}
+{{--                            @endforeach--}}
 -------------------------------------------------------
 
 
