@@ -11,6 +11,15 @@ $text_strlen = strlen($text);
 echo strrev($text);
 ?>
 
+
+--------------------------------Split the string "Hello" into an array:--------------------------------
+
+<?php
+print_r(str_split("Hello"));
+?>
+
+-------------------------------- / convert string to array --------------------------------
+
 // -------------------------------- Lesson 2 --------------------------------
 $hello = 'hello world';
 $x = str_split($hello, 1);
