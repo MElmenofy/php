@@ -1,0 +1,7 @@
+$ord =DB::table('orders')
+              ->join('store','orders.store_id','=','store.id')
+             ->join('users', 'orders.user_id', '=','users.id')
+             ->join('address', 'orders.address_id', '=','address.address_id')
+              ->where('orders.store_id',$store->id)
+             ->orderBy('orders.delivery_date','DESC')
+             ->paginate(10);
