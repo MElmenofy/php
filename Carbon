@@ -1,0 +1,4 @@
+// return today name
+$carbon = Carbon::now();
+        return $carbon->format('l');
+------------------            ---------------------
