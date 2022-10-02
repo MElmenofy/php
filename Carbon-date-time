@@ -1,0 +1,12 @@
+// return today name
+$carbon = Carbon::now();
+        return $carbon->format('l');
+        
+        
+------------------  if date / compare          ---------------------
+if(date('Y-m-d', strtotime($conference_value->date)) >  date('Y-m-d')){
+
+}
+
+
+------------------        ---------------------
