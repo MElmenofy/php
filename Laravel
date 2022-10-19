@@ -66,3 +66,12 @@ $ss = DB::table('order_has_status')->where('status_id', '=',7)->get();
 array_intersect($a2,$re_ids);
 
 // /COMPAR 2 ARRAYS
+------------------------------------------------------------
+QUERY
+$category = Category::with(['products' => function ($query) use ($gold_type) {
+                $query->where('gold_type', $gold_type);
+            }])->where('id', $cat_id)->first();
+
+------------------------------------------------------------
+
+
