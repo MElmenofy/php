@@ -2,7 +2,7 @@
 
 function notifybyfirebase($title, $body, $token, $data = [])
 {
-    $SERVER_API_KEY = "AAAAMbBxsdg:APA91bHR96Vb4NftedJRc7QyuJRCrCIIGCrlzeMv-Wjq-KynUx_HSwoeZktzVOZrUf6IGXnsp5Ri8tYQJXyur1vPpe6j_V7KRxVTRHf81r1iwm4QsZwf37u53s_Ljz0MEqGTsjDIsOOs";
+    $SERVER_API_KEY = "";
     
     $data = [
 
